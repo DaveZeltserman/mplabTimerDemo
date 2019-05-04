@@ -1,0 +1,14 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1 ISRFuntions.c
+[; ;ISRFuntions.c: 1: void performAction() {
+[v _performAction `(v ~T0 @X0 1 ef ]
+{
+[e :U _performAction ]
+[f ]
+"3
+[; ;ISRFuntions.c: 3:     return;
+[e $UE 1  ]
+"4
+[; ;ISRFuntions.c: 4: }
+[e :UE 1 ]
+}

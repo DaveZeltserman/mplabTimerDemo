@@ -1,0 +1,114 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"50 mcc_generated_files/device_config.c
+[p x RETEN = ON ]
+"51
+[p x INTOSCSEL = HIGH ]
+"52
+[p x SOSCSEL = DIG ]
+"53
+[p x XINST = OFF ]
+"56
+[p x FOSC = INTIO2 ]
+"57
+[p x PLLCFG = OFF ]
+"58
+[p x FCMEN = OFF ]
+"59
+[p x IESO = OFF ]
+"62
+[p x PWRTEN = OFF ]
+"63
+[p x BOREN = SBORDIS ]
+"64
+[p x BORV = 3 ]
+"65
+[p x BORPWR = ZPBORMV ]
+"68
+[p x WDTEN = OFF ]
+"69
+[p x WDTPS = 1048576 ]
+"72
+[p x RTCOSC = SOSCREF ]
+"73
+[p x EASHFT = ON ]
+"74
+[p x ABW = MM ]
+"75
+[p x BW = 16 ]
+"76
+[p x WAIT = OFF ]
+"79
+[p x CCP2MX = PORTC ]
+"80
+[p x ECCPMX = PORTE ]
+"81
+[p x MSSPMSK = MSK7 ]
+"82
+[p x MCLRE = ON ]
+"85
+[p x STVREN = ON ]
+"86
+[p x BBSIZ = BB2K ]
+"87
+[p x DEBUG = OFF ]
+"90
+[p x CP0 = OFF ]
+"91
+[p x CP1 = OFF ]
+"92
+[p x CP2 = OFF ]
+"93
+[p x CP3 = OFF ]
+"94
+[p x CP4 = OFF ]
+"95
+[p x CP5 = OFF ]
+"96
+[p x CP6 = OFF ]
+"97
+[p x CP7 = OFF ]
+"100
+[p x CPB = OFF ]
+"101
+[p x CPD = OFF ]
+"104
+[p x WRT0 = OFF ]
+"105
+[p x WRT1 = OFF ]
+"106
+[p x WRT2 = OFF ]
+"107
+[p x WRT3 = OFF ]
+"108
+[p x WRT4 = OFF ]
+"109
+[p x WRT5 = OFF ]
+"110
+[p x WRT6 = OFF ]
+"111
+[p x WRT7 = OFF ]
+"114
+[p x WRTC = OFF ]
+"115
+[p x WRTB = OFF ]
+"116
+[p x WRTD = OFF ]
+"119
+[p x EBRT0 = OFF ]
+"120
+[p x EBRT1 = OFF ]
+"121
+[p x EBRT2 = OFF ]
+"122
+[p x EBRT3 = OFF ]
+"123
+[p x EBRT4 = OFF ]
+"124
+[p x EBRT5 = OFF ]
+"125
+[p x EBRT6 = OFF ]
+"126
+[p x EBRT7 = OFF ]
+"129
+[; ;mcc_generated_files/device_config.c: 129: 
+[p x EBRTB = OFF ]
