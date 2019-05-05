@@ -29,6 +29,8 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "1 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\ISRFuntions.c
 [v _performAction performAction `(v  1 e 1 0 ]
+"6
+[v _performTm2PwmAction performTm2PwmAction `(v  1 e 1 0 ]
 "49 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "52 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/interrupt_manager.c
@@ -37,10 +39,20 @@
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 "50 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"59
+"61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/pwm4.c
+[v _PWM4_Initialize PWM4_Initialize `(v  1 e 1 0 ]
+"66 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"121
+[v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
+"134
+[v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
+"138
+[v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
 "66 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr3.c
 [v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
 "122
@@ -59,8 +71,30 @@
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3877 ]
 "1612
 [v _REFOCON REFOCON `VEuc  1 e 1 @3882 ]
+[s S630 . 1 `uc 1 C4TSEL 1 0 :2:0 
+`uc 1 C5TSEL0 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 C6TSEL0 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 C7TSEL 1 0 :2:6 
+]
+"1746
+[s S637 . 1 `uc 1 C4TSEL0 1 0 :1:0 
+`uc 1 C4TSEL1 1 0 :1:1 
+`uc 1 . 1 0 :4:2 
+`uc 1 C7TSEL0 1 0 :1:6 
+`uc 1 C7TSEL1 1 0 :1:7 
+]
+[u S643 . 1 `S630 1 . 1 0 `S637 1 . 1 0 ]
+[v _CCPTMRS1bits CCPTMRS1bits `VES643  1 e 1 @3884 ]
 "5312
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @3940 ]
+"7233
+[v _CCP4CON CCP4CON `VEuc  1 e 1 @3959 ]
+"7319
+[v _CCPR4L CCPR4L `VEuc  1 e 1 @3960 ]
+"7339
+[v _CCPR4H CCPR4H `VEuc  1 e 1 @3961 ]
 "9570
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "9682
@@ -95,6 +129,40 @@
 [v _TRISH TRISH `VEuc  1 e 1 @3993 ]
 "11067
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S429 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 TMR1GIE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"11226
+[s S438 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S443 . 1 `S429 1 . 1 0 `S438 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES443  1 e 1 @3997 ]
+[s S461 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 TMR1GIF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"11309
+[s S470 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S475 . 1 `S461 1 . 1 0 `S470 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES475  1 e 1 @3998 ]
 [s S58 . 1 `uc 1 TMR3GIE 1 0 :1:0 
 `uc 1 TMR3IE 1 0 :1:1 
 `uc 1 HLVDIE 1 0 :1:2 
@@ -187,6 +255,27 @@
 [v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
 "13192
 [v _TMR3H TMR3H `VEuc  1 e 1 @4019 ]
+"16063
+[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
+[s S719 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"16084
+[s S723 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S731 . 1 `S719 1 . 1 0 `S723 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES731  1 e 1 @4042 ]
+"16134
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+"16154
+[v _TMR2 TMR2 `VEuc  1 e 1 @4044 ]
 [s S269 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "16371
@@ -250,6 +339,8 @@
 ]
 [u S367 . 1 `S345 1 . 1 0 `S354 1 . 1 0 `S363 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES367  1 e 1 @4082 ]
+"60 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr2.c
+[v _TMR2_InterruptHandler TMR2_InterruptHandler `*.38(v  1 e 3 0 ]
 "59 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr3.c
 [v _timer3ReloadVal timer3ReloadVal `VEus  1 e 2 0 ]
 "60
@@ -262,7 +353,7 @@
 "50 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"57
+"59
 } 0
 "66 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr3.c
 [v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
@@ -275,15 +366,31 @@
 [v TMR3_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 4 ]
 "175
 } 0
+"66 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"134
+[v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 4 ]
+"136
+} 0
+"64 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/pwm4.c
+[v _PWM4_Initialize PWM4_Initialize `(v  1 e 1 0 ]
+{
+"80
+} 0
 "55 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "100
 } 0
-"59 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/mcc.c
+"61 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"69
+"71
 } 0
 "52 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -293,7 +400,7 @@
 "58
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
-"76
+"80
 } 0
 "159 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr3.c
 [v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
@@ -315,4 +422,19 @@
 [v _performAction performAction `(v  1 e 1 0 ]
 {
 "4
+} 0
+"121 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\mcc_generated_files/tmr2.c
+[v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
+{
+"131
+} 0
+"138
+[v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"143
+} 0
+"6 C:\Users\dave.zeltserman\MPLABXProjects\DemoPWM100MsecTimer.X\ISRFuntions.c
+[v _performTm2PwmAction performTm2PwmAction `(v  1 e 1 0 ]
+{
+"8
 } 0

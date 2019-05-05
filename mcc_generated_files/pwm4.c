@@ -1,26 +1,24 @@
 /**
-  Generated Interrupt Manager Source File
+  PWM4 Generated Driver File
 
-  @Company:
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    interrupt_manager.c
+  @File Name
+    pwm4.c
 
-  @Summary:
-    This is the Interrupt Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary
+    This is the generated driver implementation file for the PWM4 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  @Description:
-    This header file provides implementations for global interrupt handling.
-    For individual peripheral handlers please see the peripheral driver for
-    all modules selected in the GUI.
+  @Description
+    This source file provides implementations for driver APIs for PWM4.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
         Device            :  PIC18F87K22
-        Driver Version    :  2.03
+        Driver Version    :  2.01
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.00 or later
-        MPLAB 	          :  MPLAB X 5.10
+        Compiler          :  XC8 2.00
+         MPLAB 	          :  MPLAB X 5.10
 */
 
 /*
@@ -46,38 +44,51 @@
     SOFTWARE.
 */
 
-#include "interrupt_manager.h"
-#include "mcc.h"
+/**
+  Section: Included Files
+*/
 
-void  INTERRUPT_Initialize (void)
+#include <xc.h>
+#include "pwm4.h"
+
+/**
+  Section: Macro Declarations
+*/
+
+#define PWM4_INITIALIZE_DUTY_VALUE    30
+
+/**
+  Section: PWM Module APIs
+*/
+
+void PWM4_Initialize(void)
 {
-    // Disable Interrupt Priority Vectors (16CXXX Compatibility Mode)
-    RCONbits.IPEN = 0;
+    // Set the PWM4 to the options selected in the User Interface
+	
+	// CCP4M PWM; DC4B 2; 
+	CCP4CON = 0x2C;    
+	
+	// CCPR4L 7; 
+	CCPR4L = 0x07;    
+	
+	// CCPR4H 0; 
+	CCPR4H = 0x00;    
+
+	// Selecting Timer 2
+	CCPTMRS1bits.C4TSEL = 0x0;
+    
 }
 
-void __interrupt() INTERRUPT_InterruptManager (void)
+void PWM4_LoadDutyValue(uint16_t dutyValue)
 {
-    // interrupt handler
-    if(INTCONbits.PEIE == 1)
-    {
-        if(PIE2bits.TMR3IE == 1 && PIR2bits.TMR3IF == 1)
-        {
-            TMR3_ISR();
-        } 
-        else if(PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
-        {
-            TMR2_ISR();
-        } 
-        else
-        {
-            //Unhandled Interrupt
-        }
-    }      
-    else
-    {
-        //Unhandled Interrupt
-    }
+   // Writing to 8 MSBs of pwm duty cycle in CCPRL register
+    CCPR4L = ((dutyValue & 0x03FC)>>2);
+    
+   // Writing to 2 LSBs of pwm duty cycle in CCPCON register
+    CCP4CON = ((uint8_t)(CCP4CON & 0xCF) | ((dutyValue & 0x0003)<<4));
 }
+
 /**
  End of File
 */
+

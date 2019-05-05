@@ -65,6 +65,20 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set IO_RG3 aliases
+#define IO_RG3_TRIS                 TRISGbits.TRISG3
+#define IO_RG3_LAT                  LATGbits.LATG3
+#define IO_RG3_PORT                 PORTGbits.RG3
+#define IO_RG3_ANS                  ANCON2bits.ANSEL17
+#define IO_RG3_SetHigh()            do { LATGbits.LATG3 = 1; } while(0)
+#define IO_RG3_SetLow()             do { LATGbits.LATG3 = 0; } while(0)
+#define IO_RG3_Toggle()             do { LATGbits.LATG3 = ~LATGbits.LATG3; } while(0)
+#define IO_RG3_GetValue()           PORTGbits.RG3
+#define IO_RG3_SetDigitalInput()    do { TRISGbits.TRISG3 = 1; } while(0)
+#define IO_RG3_SetDigitalOutput()   do { TRISGbits.TRISG3 = 0; } while(0)
+#define IO_RG3_SetAnalogMode()      do { ANCON2bits.ANSEL17 = 1; } while(0)
+#define IO_RG3_SetDigitalMode()     do { ANCON2bits.ANSEL17 = 0; } while(0)
+
 /**
    @Param
     none

@@ -1,8 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"72 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"7233 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 7233: extern volatile unsigned char CCP4CON __attribute__((address(0xF77)));
+[v _CCP4CON `Vuc ~T0 @X0 0 e@3959 ]
+"7319
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 7319: extern volatile unsigned char CCPR4L __attribute__((address(0xF78)));
+[v _CCPR4L `Vuc ~T0 @X0 0 e@3960 ]
+"7339
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 7339: extern volatile unsigned char CCPR4H __attribute__((address(0xF79)));
+[v _CCPR4H `Vuc ~T0 @X0 0 e@3961 ]
+"1730
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 1730:     struct {
+[s S71 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S71 . C4TSEL C5TSEL0 . C6TSEL0 . C7TSEL ]
+"1738
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 1738:     struct {
+[s S72 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S72 . C4TSEL0 C4TSEL1 . C7TSEL0 C7TSEL1 ]
+"1729
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 1729: typedef union {
+[u S70 `S71 1 `S72 1 ]
+[n S70 . . . ]
+"1746
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 1746: extern volatile CCPTMRS1bits_t CCPTMRS1bits __attribute__((address(0xF2C)));
+[v _CCPTMRS1bits `VS70 ~T0 @X0 0 e@3884 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 54: __asm("PMD3 equ 0F16h");
 [; <" PMD3 equ 0F16h ;# ">
@@ -849,31 +869,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17970
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f87k22.h: 17970: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"50
-[; ;main.c: 50: {
+"64 mcc_generated_files/pwm4.c
+[; ;mcc_generated_files/pwm4.c: 64: void PWM4_Initialize(void)
+[v _PWM4_Initialize `(v ~T0 @X0 1 ef ]
+"65
+[; ;mcc_generated_files/pwm4.c: 65: {
 {
-[e :U _main ]
+[e :U _PWM4_Initialize ]
 [f ]
-"52
-[; ;main.c: 52:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"70
-[; ;main.c: 70:     while (1)
-[e :U 830 ]
-"71
-[; ;main.c: 71:     {
-{
-"73
-[; ;main.c: 73:     }
-}
-[e :U 829 ]
-[e $U 830  ]
-[e :U 831 ]
-"74
-[; ;main.c: 74: }
+"69
+[; ;mcc_generated_files/pwm4.c: 69:  CCP4CON = 0x2C;
+[e = _CCP4CON -> -> 44 `i `uc ]
+"72
+[; ;mcc_generated_files/pwm4.c: 72:  CCPR4L = 0x07;
+[e = _CCPR4L -> -> 7 `i `uc ]
+"75
+[; ;mcc_generated_files/pwm4.c: 75:  CCPR4H = 0x00;
+[e = _CCPR4H -> -> 0 `i `uc ]
+"78
+[; ;mcc_generated_files/pwm4.c: 78:  CCPTMRS1bits.C4TSEL = 0x0;
+[e = . . _CCPTMRS1bits 0 0 -> -> 0 `i `uc ]
+"80
+[; ;mcc_generated_files/pwm4.c: 80: }
 [e :UE 828 ]
+}
+"82
+[; ;mcc_generated_files/pwm4.c: 82: void PWM4_LoadDutyValue(uint16_t dutyValue)
+[v _PWM4_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
+"83
+[; ;mcc_generated_files/pwm4.c: 83: {
+{
+[e :U _PWM4_LoadDutyValue ]
+"82
+[; ;mcc_generated_files/pwm4.c: 82: void PWM4_LoadDutyValue(uint16_t dutyValue)
+[v _dutyValue `us ~T0 @X0 1 r1 ]
+"83
+[; ;mcc_generated_files/pwm4.c: 83: {
+[f ]
+"85
+[; ;mcc_generated_files/pwm4.c: 85:     CCPR4L = ((dutyValue & 0x03FC)>>2);
+[e = _CCPR4L -> >> & -> _dutyValue `ui -> -> 1020 `i `ui -> 2 `i `uc ]
+"88
+[; ;mcc_generated_files/pwm4.c: 88:     CCP4CON = ((uint8_t)(CCP4CON & 0xCF) | ((dutyValue & 0x0003)<<4));
+[e = _CCP4CON -> | -> -> & -> _CCP4CON `i -> 207 `i `uc `ui << & -> _dutyValue `ui -> -> 3 `i `ui -> 4 `i `uc ]
+"89
+[; ;mcc_generated_files/pwm4.c: 89: }
+[e :UE 829 ]
 }

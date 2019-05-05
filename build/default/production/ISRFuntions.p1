@@ -12,3 +12,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ISRFuntions.c: 4: }
 [e :UE 1 ]
 }
+"6
+[; ;ISRFuntions.c: 6: void performTm2PwmAction() {
+[v _performTm2PwmAction `(v ~T0 @X0 1 ef ]
+{
+[e :U _performTm2PwmAction ]
+[f ]
+"8
+[; ;ISRFuntions.c: 8: }
+[e :UE 2 ]
+}
